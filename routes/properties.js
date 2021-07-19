@@ -81,11 +81,11 @@ router.get('/:suburb', function (req, res, next) {
 	const foundProperties = properties.filter(
 		(property) => property.address.suburb === req.params.suburb
 	);
-
+	//get an average for the properties with the suburb requested
 	const average =
 		foundProperties.reduce((r, v) => r + v.price, 0) /
 		foundProperties.length;
-
+	//append a property called average that relates to the average house price.
 	for (const prop of foundProperties) {
 		if (prop.price == average) prop.average = 'Equal';
 		if (prop.price < average) prop.average = 'Less';
@@ -111,9 +111,9 @@ router.post('/', function (req, res, next) {
 		description: body.description,
 		price: body.price,
 	};
-
+	//add the property to the array
 	properties.push(newProperty);
-
+	//return the added property
 	res.status(201).json(newProperty);
 });
 
