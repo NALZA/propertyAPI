@@ -88,8 +88,8 @@ router.get('/:suburb', function (req, res, next) {
 
 	for (const prop of foundProperties) {
 		if (prop.price == average) prop.average = 'Equal';
-		else if (prop.price < average) prop.average = 'Less';
-		else if (prop.price > average) prop.average = 'Greater';
+		if (prop.price < average) prop.average = 'Less';
+		if (prop.price > average) prop.average = 'Greater';
 	}
 	console.log(foundProperties);
 	res.json(foundProperties);
