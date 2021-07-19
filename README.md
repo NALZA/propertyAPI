@@ -30,15 +30,13 @@ Response comes in form of JSON object
 - node >= 8
 
 ```
--- git clone https://github.com/NALZA/propertyAPI/
--- cd propertyapi
--- npm install
-
+git clone https://github.com/NALZA/propertyAPI/
+cd propertyapi
+npm install
 ```
 
 Run application
 
 ```
--- npm start
-
+npm start
 ```
