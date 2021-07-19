@@ -14,8 +14,8 @@ API based on Expressjs, generated with express-generator.
 Response comes in form of JSON object
 
 ## Further conciderations
--- Can validate the input further by checking things like post code are at the correct length
--- Adding a database moving from an in memeory storage to a database would include. 
+# Can validate the input further by checking things like post code are at the correct length
+# Adding a database moving from an in memeory storage to a database would include. 
   - A database connection and testing
   - Change to how the routes add data to the application
   - Test to see data in the database
@@ -30,15 +30,15 @@ Response comes in form of JSON object
 - node >= 8
 
 ```
-git clone https://github.com/NALZA/propertyAPI/
-cd propertyapi
-npm install
+-- git clone https://github.com/NALZA/propertyAPI/
+-- cd propertyapi
+-- npm install
 
 ```
 
 Run application
 
 ```
-npm start
+-- npm start
 
 ```
