@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"start": "nodemon --exec babel-node app",
-		"test": "jest --watchAll"
+		"test": "jest --collect-coverage --watchAll"
 	},
 	"dependencies": {
 		"cookie-parser": "~1.4.4",

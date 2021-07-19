@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1626669660097" clover="3.2.0">
+  <project timestamp="1626669660097" name="All files">
+    <metrics statements="34" coveredstatements="34" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5" elements="45" coveredelements="44" complexity="0" loc="34" ncloc="34" packages="2" files="2" classes="2"/>
+    <package name="propertyapi">
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="app.js" path="D:\Documents\Projects\propertyApi\propertyapi\app.js">
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="propertyapi.routes">
+      <metrics statements="21" coveredstatements="21" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
+      <file name="properties.js" path="D:\Documents\Projects\propertyApi\propertyapi\routes\properties.js">
+        <metrics statements="21" coveredstatements="21" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="82" count="7" type="stmt"/>
+        <line num="86" count="3" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="90" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="91" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="92" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="117" count="1" type="stmt"/>
+        <line num="120" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

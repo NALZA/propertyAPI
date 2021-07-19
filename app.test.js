@@ -64,7 +64,7 @@ describe('Property API', () => {
 	//the avg price for properties in the suburb.
 	it('GET /properties/suburb --> array properties filtered', () => {
 		return request(app)
-			.get('/properties/Brunswick')
+			.get('/properties/TEST')
 			.expect('Content-Type', /json/)
 			.expect(200)
 			.then((response) => {
@@ -74,16 +74,43 @@ describe('Property API', () => {
 							id: expect.any(Number),
 							address: expect.objectContaining({
 								addressLine: expect.any(String),
-								suburb: 'Brunswick',
+								suburb: 'TEST',
 								city: expect.any(String),
 								postcode: expect.any(String),
 							}),
 							description: expect.any(String),
 							price: expect.any(Number),
-							average: expect.any(String),
+							average: 'Less',
+						}),
+						expect.objectContaining({
+							id: expect.any(Number),
+							address: expect.objectContaining({
+								addressLine: expect.any(String),
+								suburb: 'TEST',
+								city: expect.any(String),
+								postcode: expect.any(String),
+							}),
+							description: expect.any(String),
+							price: expect.any(Number),
+							average: 'Equal',
+						}),
+						expect.objectContaining({
+							id: expect.any(Number),
+							address: expect.objectContaining({
+								addressLine: expect.any(String),
+								suburb: 'TEST',
+								city: expect.any(String),
+								postcode: expect.any(String),
+							}),
+							description: expect.any(String),
+							price: expect.any(Number),
+							average: 'Greater',
 						}),
 					])
 				);
 			});
 	});
+
+	//test to validate that the average price filter is working as intended.
+	it('GET /properties/suburb --> valid array properties filtered', () => {});
 });
