@@ -59,4 +59,31 @@ describe('Property API', () => {
 				);
 			});
 	});
+
+	//test to show properties with field to indicate if the property is above, below or equal to
+	//the avg price for properties in the suburb.
+	it('GET /properties/suburb --> array properties filtered', () => {
+		return request(app)
+			.get('/properties/Brunswick')
+			.expect('Content-Type', /json/)
+			.expect(200)
+			.then((response) => {
+				expect(response.body).toEqual(
+					expect.arrayContaining([
+						expect.objectContaining({
+							id: expect.any(Number),
+							address: expect.objectContaining({
+								addressLine: expect.any(String),
+								suburb: 'Brunswick',
+								city: expect.any(String),
+								postcode: expect.any(String),
+							}),
+							description: expect.any(String),
+							price: expect.any(Number),
+							average: expect.any(String),
+						}),
+					])
+				);
+			});
+	});
 });
