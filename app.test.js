@@ -60,9 +60,35 @@ describe('Property API', () => {
 			});
 	});
 
+	//test to validate that the average price filter is working as intended.
+	it('GET /properties/suburb --> array properties filtered', () => {
+		return request(app)
+			.get('/properties/Brunswick')
+			.expect('Content-Type', /json/)
+			.expect(200)
+			.then((response) => {
+				expect(response.body).toEqual(
+					expect.arrayContaining([
+						expect.objectContaining({
+							id: expect.any(Number),
+							address: expect.objectContaining({
+								addressLine: expect.any(String),
+								suburb: 'Brunswick',
+								city: expect.any(String),
+								postcode: expect.any(String),
+							}),
+							description: expect.any(String),
+							price: expect.any(Number),
+							average: expect.any(String),
+						}),
+					])
+				);
+			});
+	});
+
 	//test to show properties with field to indicate if the property is above, below or equal to
 	//the avg price for properties in the suburb.
-	it('GET /properties/suburb --> array properties filtered', () => {
+	it('GET /properties/suburb --> valid array properties filtered', () => {
 		return request(app)
 			.get('/properties/TEST')
 			.expect('Content-Type', /json/)
@@ -110,7 +136,8 @@ describe('Property API', () => {
 				);
 			});
 	});
-
-	//test to validate that the average price filter is working as intended.
-	it('GET /properties/suburb --> valid array properties filtered', () => {});
+	//test to show missing suburb
+	it('GET /properties/suburb --> 404 not found', () => {
+		return request(app).get('/properties/NOTAREALSUBURB').expect(404);
+	});
 });

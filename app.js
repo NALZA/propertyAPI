@@ -1,3 +1,4 @@
+//express app generated from express-generator
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');

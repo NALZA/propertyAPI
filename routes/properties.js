@@ -81,6 +81,9 @@ router.get('/:suburb', function (req, res, next) {
 	const foundProperties = properties.filter(
 		(property) => property.address.suburb === req.params.suburb
 	);
+	if (!foundProperties.length > 0) {
+		return res.status(404).send(req.params.suburb + 'Not found');
+	}
 	//get an average for the properties with the suburb requested
 	const average =
 		foundProperties.reduce((r, v) => r + v.price, 0) /
@@ -91,7 +94,6 @@ router.get('/:suburb', function (req, res, next) {
 		if (prop.price < average) prop.average = 'Less';
 		if (prop.price > average) prop.average = 'Greater';
 	}
-	console.log(foundProperties);
 	res.json(foundProperties);
 });
 
