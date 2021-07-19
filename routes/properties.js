@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 //storage for properties
 const properties = [
@@ -35,6 +35,39 @@ const properties = [
 		},
 		description: '5 apple Road',
 		price: 520000.0,
+	},
+	{
+		id: 4,
+		address: {
+			addressLine: '5 apple Road',
+			suburb: 'TEST',
+			city: 'Melbourne',
+			postcode: '1234',
+		},
+		description: '5 apple Road',
+		price: 2.0,
+	},
+	{
+		id: 5,
+		address: {
+			addressLine: '5 apple Road',
+			suburb: 'TEST',
+			city: 'Melbourne',
+			postcode: '1234',
+		},
+		description: '5 apple Road',
+		price: 4.0,
+	},
+	{
+		id: 6,
+		address: {
+			addressLine: '5 apple Road',
+			suburb: 'TEST',
+			city: 'Melbourne',
+			postcode: '1234',
+		},
+		description: '5 apple Road',
+		price: 6.0,
 	},
 ];
 
