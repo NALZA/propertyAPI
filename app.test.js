@@ -18,22 +18,20 @@ describe('Property API', () => {
 				description: '5 Peel Street is a beautiful home',
 				price: 120000.0,
 			})
-			.expect('Content-Type', '/json/')
+			.expect('Content-Type', /json/)
 			.expect(201)
 			.then((response) => {
 				expect(response.body).toEqual(
-					expect.arrayContaining([
-						expect.objectContaining({
-							address: expect.objectContaining({
-								addressLine: '5 Peel Street',
-								suburb: 'Brunswick',
-								city: 'Melbourne',
-								postcode: '1234',
-							}),
-							description: '5 Peel Street is a beautiful home',
-							price: 120000.0,
+					expect.objectContaining({
+						address: expect.objectContaining({
+							addressLine: '5 Peel Street',
+							suburb: 'Brunswick',
+							city: 'Melbourne',
+							postcode: '1234',
 						}),
-					])
+						description: '5 Peel Street is a beautiful home',
+						price: 120000.0,
+					})
 				);
 			});
 	});
