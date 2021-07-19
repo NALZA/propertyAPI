@@ -7,7 +7,8 @@ API based on Expressjs, generated with express-generator.
 - Get all properties
 - Get properties by suburb
 - Add a proprttyy
--100% test coverage
+- git commit history to show development process
+- 100% coverage
 
 ## API response
 
