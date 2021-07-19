@@ -3,7 +3,41 @@ const { response } = require('./app');
 const app = require('./app');
 
 describe('Property API', () => {
-	//first test is to retreive a search of all properties.
+	//Create a  test to add property with address, sale price, and description.
+	//Could make this property not properties ie remove plural
+	it('POST /properties --> added property', () => {
+		return request(app)
+			.post('/properties')
+			.send({
+				address: {
+					addressLine: '5 Peel Street',
+					suburb: 'Brunswick',
+					city: 'Melbourne',
+					postcode: '1234',
+				},
+				description: '5 Peel Street is a beautiful home',
+				price: 120000.0,
+			})
+			.expect('Content-Type', '/json/')
+			.expect(201)
+			.then((response) => {
+				expect(response.body).toEqual(
+					expect.arrayContaining([
+						expect.objectContaining({
+							address: expect.objectContaining({
+								addressLine: '5 Peel Street',
+								suburb: 'Brunswick',
+								city: 'Melbourne',
+								postcode: '1234',
+							}),
+							description: '5 Peel Street is a beautiful home',
+							price: 120000.0,
+						}),
+					])
+				);
+			});
+	});
+	//test is to retreive a search of all properties.
 	it('GET /properties --> array properties', () => {
 		return request(app)
 			.get('/properties')
