@@ -3,14 +3,12 @@
 API based on Expressjs, generated with express-generator.
 
 ## Features
-...
 
 - Get all properties
 - Get properties by suburb
 - Add a proprttyy
 -100% test coverage
 
-```
 ## API response
 
 Response comes in form of JSON object
